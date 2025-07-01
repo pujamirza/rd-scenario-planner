@@ -7,7 +7,7 @@ st.title("R&D Resource Scenario Planner")
 uploaded_file = st.file_uploader("Upload your allocation data (CSV)", type="csv")
 
 if uploaded_file:
-    df = pd.read_csv(uploaded_file)
+df = pd.read_csv(uploaded_file, encoding='utf-8', sep=",", engine="python", on_bad_lines='skip')
     st.success("File loaded!")
 
     # Show options
